@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>SuperMsg1.0</title>
+<link href="${ctx}/css/main.css" rel="stylesheet" type="text/css" />
+<link href="${ctx}/css/themesetting.css" rel="stylesheet" type="text/css">
+<link href="${ctx}/css/skins/black.css" rel="stylesheet" type="text/css"/>
+<link href="${ctx}/css/powerFloat.css" rel="stylesheet" type="text/css" />
+<link href="${ctx}/css/smartMenu.css" rel="stylesheet" type="text/css" />

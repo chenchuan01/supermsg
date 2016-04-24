@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<script type="text/javascript" src="${ctx}/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery-powerFloat-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery-smartMenu-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery-class.js"></script>
+<script type="text/javascript" src="${ctx}/js/artDialog.js"></script>
+<script type="text/javascript" src="${ctx}/js/iframeTools.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.core-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.widget-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.mouse-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.draggable-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.droppable-min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.ui.sortable.js"></script>
+<script type="text/javascript" src="${ctx}/js/data.js"></script>
+<script type="text/javascript" src="${ctx}/js/webos-core.js"></script>
