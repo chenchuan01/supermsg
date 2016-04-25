@@ -1052,6 +1052,18 @@ a.plain_text {
     height: 50px;
     margin: 0 auto;
 }
+.dock_tool_exit{
+	cursor: pointer;
+    display: block;
+    float: left;
+    height: 48px;
+    margin:0;
+    position: relative;
+    width: 48px;
+    background: url("../images/dock_tool_exit.png") no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 .dock_tool_icon {
     background: url("../images/portal_all_png.png") no-repeat scroll 0 0 transparent;
     cursor: pointer;

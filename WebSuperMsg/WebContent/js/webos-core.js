@@ -13,25 +13,18 @@ $(function() {
 
 	Body.init();
 	Desktop.init();
-	Deskpanel.init({//向5个桌面添加应用
-		Icon1:['readGod','sosomap','jinshan','douban','Pixlr','yule','weather','Clock'],
-		Icon2:['mangguo','tuanmap','fastsearch','bianqian','wangdesk'],
-		Icon3:['friend','friendnear','friendgroup','kaikai','kxjy'],
-		Icon4:['qidianzhongwen','qqread','xiami','musicbox','vadio','leshi'],
-		Icon5:[	'doudizhi',	'3366',	'qqbaby','game']
+	Deskpanel.init({
+		Icon1:['baidu']
 	}).refresh();
 	Sidebar.init({
-		location:'left',//初始化sidebar的位置为左侧
+		location:'left',
 		Icon:[
-			'appmarket',
-			'qq',
-			'weibo',
-			'mail',
-			'internet',
-			'zone'
+			'chats',
+			'friends',
+			'plusup'
 		]
 	});
-	Navbar.init();//初始化导航条	
+	/*Navbar.init();//初始化导航条	*/
 	BottomBar.init();//初始化下部栏
 	appManagerPanel.init();//初始化全局桌面
 	
@@ -134,28 +127,28 @@ Desktop=function(me){
 		},
 		setMenu:function(){
 			var MenuData = [
-						[{
+						[/*{
 							text: "显示桌面",
 							func: function() {
 								
 							}
-						},{
+						},*/{
 							text: "关闭所有",
 							func: function() {
 								Windows.closeAllWindow();
 							}
-						}, {
+						}/*, {
 							text: "锁屏",
 							func: function() {
 								
 							}
-						}],
-						[{
+						}*/],
+						[/*{
 							text: "系统设置",
 							func: function() {
 								 
 							}
-						},{
+						},*/{
 							text: "主题设置",
 							func: function() {								
 							  Windows.openSys({
@@ -184,7 +177,7 @@ Desktop=function(me){
 						[{
 							text:"注销",
 							func:function(){
-							
+								window.location.href = basePath+"login/logout.do";
 							}
 						}]
 					];
@@ -405,7 +398,7 @@ Sidebar=function(me){
 	
 	var tool_list = "<div class='dock_tool_list' id='dockToolList' >";
 	var tool_item = "<div class='dock_tool_item'></div>";
-	var tool_a ="<a title='{title}' cmd='{cmd}'	class='dock_tool_icon dock_tool_{key}' href='###'></a>";
+	var tool_a ="<a title='{title}' cmd='{cmd}'	class='dock_tool_icon dock_tool_{key}' href='javascript:;'></a>";
 	
 	//装载容器类
 	var SideBox = $.Class({
@@ -450,9 +443,9 @@ Sidebar=function(me){
 			Desktop.addPanel(me.rightPanel.box);
 			Desktop.addPanel(me.topPanel.box);
 			me.createStartTool();
-			me.createPinyinTool();
+			/*me.createPinyinTool();
 			me.createSoundTool();
-			me.createSettingTool();
+			me.createSettingTool();*/
 			me.createThemeTool();
 		 },
 		 movePanel:function(){ //移动panel
@@ -513,9 +506,9 @@ Sidebar=function(me){
 			  me.box.append(docklist);		
 		 },		 
 		 createStartTool:function(){//开始设置
-			me.start = $("<a title='点击这里开始' class='dock_tool_icon dock_tool_start'	href='###'></a>");
+			me.start = $("<a title='退出登录' class='dock_tool_exit'	href='"+logoutUri+"'></a>");
 			
-			me.start.click(function(){
+			/*me.start.click(function(){
 				var _this = $(this);
 				var position="";
 				var offsets = {};
@@ -542,7 +535,7 @@ Sidebar=function(me){
 								
 					}
 			   });
-			});
+			});*/
 		
 		 
 		 },
@@ -710,8 +703,8 @@ Navbar =function(me){
 	var _box = "<div  id='navbar' class='no_sysbtn' style='width:240px'></div>";
 	var _innerBox = "<div class='indicator_container nav_current_{index}'	id='indicatorContainer'></div>";
 	var _userbox = "<div class='indicator indicator_header' id='navbarHeaderImg' cmd='user' title='{title}'><img src='{url}' alt='{title}' class='indicator_header_img' ></div>";
-	var _abox  = "<a class='indicator indicator_{num}' href='###' cmd='switch' index='{index}'	title='桌面{index}'><span class='indicator_icon_bg'></span><span class='indicator_icon indicator_icon_{num}'>{num}</span></a>";
-	var _abox2 = "<a class='indicator indicator_{key}' href='###' cmd='{key}' title='{title}'></a>";
+	var _abox  = "<a class='indicator indicator_{num}' href='javascript:;' cmd='switch' index='{index}'	title='桌面{index}'><span class='indicator_icon_bg'></span><span class='indicator_icon indicator_icon_{num}'>{num}</span></a>";
+	var _abox2 = "<a class='indicator indicator_{key}' href='javascript:;' cmd='{key}' title='{title}'></a>";
 	var num =5 ,
 		defaultnum=1,
 		title = "请登录",
@@ -812,8 +805,8 @@ Navbar =function(me){
 			});			
 			var pagelet_search_suggest =$("<div class='pagelet_search_suggest' id='pagelet_search_suggest'style='display: none;' ></div>");
 			var sb_resultbox = $("<ul id='sb_resultBox'  style='display: block;'></ul>");
-			var sb_app_item_1 =$("<div idx='-1' class='sb_resultList sb_page'><a href='#'><span class='sb_pageTxt'><span id='sb_resultBox_key'>s-</span>在“SoSo”搜索</span></a>  </div>");		
-			var sb_app_item_2 = $("<div idx='-2' class='sb_resultList sb_app'><a href='#'><span class='sb_appTxt'>去应用市场搜搜...</span></a></div>");
+			var sb_app_item_1 =$("<div idx='-1' class='sb_resultList sb_page'><a href='javascript:;'><span class='sb_pageTxt'><span id='sb_resultBox_key'>s-</span>在“SoSo”搜索</span></a>  </div>");		
+			var sb_app_item_2 = $("<div idx='-2' class='sb_resultList sb_app'><a href='javascript:;'><span class='sb_appTxt'>去应用市场搜搜...</span></a></div>");
 			pagelet_search_suggest.append(sb_resultbox).append(sb_app_item_1).append(sb_app_item_2);			
 			pagelet_search_bar.append(pageletSearchInput).append(pageletSearchButton);	
 			
@@ -845,7 +838,7 @@ Navbar =function(me){
 				var _this = $(this);
 				var _val = _this.val();
 				if(_val=="o"){		
-					$("#sb_resultBox").append("<li class='sb_resultList' idx='2232'><a href='#' title='owlhr'><div class='listInner'>新奥尔</div></a></li>")
+					$("#sb_resultBox").append("<li class='sb_resultList' idx='2232'><a href='javascript:;' title='owlhr'><div class='listInner'>新奥尔</div></a></li>")
 					 .show();
 					 pagelet_search_suggest.show();		
 				}
@@ -904,7 +897,7 @@ Navbar =function(me){
 appManagerPanel = function(me){
 	
 	var appManagerPanel ="<div id='appManagerPanel' class='appManagerPanel' style='display: none; '></div>";//创建全局桌面容器
-	var aMg_Close="<a class='aMg_close' href='###'></a>";//关闭按钮			
+	var aMg_Close="<a class='aMg_close' href='javascript:;'></a>";//关闭按钮			
 	var aMg_dock_container ="<div class='aMg_dock_container' index='5' customacceptdrop='1'></div>";	
 	var aMg_line_x = "<div class='aMg_line_x'></div>";//x轴线
 	var aMg_line_y = "<div class='aMg_line_y'></div>";//y轴线
@@ -1071,8 +1064,8 @@ dockEffectBox = function(me){
 BottomBar = function(me){
 	
 	var _box = "<div id='bottomBar' class='bottomBar' style='z-index: 12;'></div>";	
-	var _NextBox = "<div id='taskNextBox' class='taskNextBox' _olddisplay='' style='display: none;'><a id='taskNext' class='taskNext' hidefocus='true' href='#'></a></div>";
-	var _PreBox = "<div id='taskPreBox' class='taskPreBox' _olddisplay='' style='display: none;'><a id='taskPre' class='taskPre' hidefocus='true' href='#'></a></div>";
+	var _NextBox = "<div id='taskNextBox' class='taskNextBox' _olddisplay='' style='display: none;'><a id='taskNext' class='taskNext' hidefocus='true' href='javascript:;'></a></div>";
+	var _PreBox = "<div id='taskPreBox' class='taskPreBox' _olddisplay='' style='display: none;'><a id='taskPre' class='taskPre' hidefocus='true' href='javascript:;'></a></div>";
 	var _taskContainner = "<div id='taskContainer' class='taskContainer' style=''></div>";
 	var bottonbarbg = "<div class='bottomBarBg'></div>";
 	var bottomBarBgTask = "<div class='bottomBarBgTask'></div>";
@@ -1162,7 +1155,7 @@ Task = $.Class({
 		});			
 		var taskA =$("<a>",{
 			"class":"taskItem fistTaskItem",
-			"href" :"#",
+			"href" :"javascript:;",
 			id  : "taskItem_"+op.id,
 			"title" :op.title,
 			"tid" :op.id,

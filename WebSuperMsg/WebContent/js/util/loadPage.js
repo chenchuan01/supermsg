@@ -33,7 +33,7 @@ var initOther=function(){
 	/**清空表单*/
 	cleanForm();
     /**bootstrap mual init*/
-    bootstrapInit();
+   /* bootstrapInit();*/
     
     navsetActive();
 };

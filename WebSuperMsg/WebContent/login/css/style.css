@@ -99,17 +99,17 @@ h1 {
 	-moz-border-top-right-radius: 10px;
 	-o-border-top-right-radius: 10p
 }
+.hotname{background: url(../images/chatName.png) no-repeat 10px 15px;}
+.user{background: url(../images/adm.png) no-repeat 10px 15px;}
 input[type="text"] {
 	  width: 70%;
 	  padding: 1em 2em 1em 3em;
 	  color: #9199aa;
 	  font-size: 18px;
 	  outline: none;
-	  background: url(../images/adm.png) no-repeat 10px 15px;
 	  border: none;
 	  font-weight: 100;
 	  border-bottom: 1px solid#484856;
-	  margin-top: 2em;
 }
  input[type="password"]{
 	  width: 70%;
@@ -126,7 +126,7 @@ input[type="text"] {
 .key {
    background: url(../images/pass.png) no-repeat 447px 17px;
 }
-input[type="submit"]{
+input[type="button"]{
   font-size: 30px;
   color: #fff;
   outline: none;
@@ -144,7 +144,7 @@ input[type="submit"]{
 	-o-border-bottom-right-radius: 15px;
 	cursor: pointer;
 }
-input[type="submit"]:hover {
+input[type="button"]:hover {
 	background: #ff2775;
   border-bottom-left-radius: 15px;
 	-webkit-border-bottom-left-radius: 15px;

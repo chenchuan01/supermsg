@@ -3,6 +3,8 @@ package com.supermsg.websocket;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
         logger = LoggerFactory.getLogger(SystemWebSocketHandler.class);
     }
 
-    @Autowired
+    @Resource
     private WebSocketService webSocketService;
 
     @Override
