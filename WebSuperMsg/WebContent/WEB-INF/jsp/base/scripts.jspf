@@ -3,6 +3,8 @@
 <script type="text/javascript" src="${ctx}/js/jquery-powerFloat-min.js"></script>
 <script type="text/javascript" src="${ctx}/js/jquery-smartMenu-min.js"></script>
 <script type="text/javascript" src="${ctx}/js/jquery-class.js"></script>
+<script type="text/javascript" src="${ctx }/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx }/js/bootstrap-typeahead.js"></script>
 <script type="text/javascript" src="${ctx}/js/artDialog.js"></script>
 <script type="text/javascript" src="${ctx}/js/iframeTools.js"></script>
 <script type="text/javascript" src="${ctx}/js/jquery.ui.core-min.js"></script>
@@ -13,3 +15,4 @@
 <script type="text/javascript" src="${ctx}/js/jquery.ui.sortable.js"></script>
 <script type="text/javascript" src="${ctx}/js/data.js"></script>
 <script type="text/javascript" src="${ctx}/js/webos-core.js"></script>
+<script type="text/javascript" src="${ctx}/js/common.js"></script>

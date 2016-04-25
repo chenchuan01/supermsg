@@ -6,11 +6,10 @@ import com.sys.base.BaseEntity;
  */
 public class User extends BaseEntity{
 	private String name;
-	private String tel;
-	private String email;
 	private String userName;
 	private String password;
 	private Integer roles = null;
+	private String friends_id;
 	
     public User() {
     }
@@ -37,18 +36,6 @@ public class User extends BaseEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getTel() {
-		return tel;
-	}
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getUserName() {
 		return userName;
 	}
@@ -67,4 +54,11 @@ public class User extends BaseEntity{
 	public void setRoles(Integer roles) {
 		this.roles = roles;
 	}
+	public String getFriends_id() {
+		return friends_id;
+	}
+	public void setFriends_id(String friends_id) {
+		this.friends_id = friends_id;
+	}
+	
 }

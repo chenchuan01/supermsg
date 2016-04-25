@@ -59,7 +59,7 @@ var win = function(title,url,width,height){
 		$(modalId+' .modal-dialog').css('width',width);
 	}
 	if(height){
-		$(modalId+' .modal-dialog').css('min-height',height);
+		$(modalId+' .modal-dialog').css('height',height);
 	}
 	
 	//content
@@ -68,6 +68,18 @@ var win = function(title,url,width,height){
 		$(modalId).modal('toggle');
 	});
 };
+var chat = function(title){
+	if(!title){
+		title = "";
+	}
+	var modalId = "#chatModal";
+	//title
+	$(modalId+' .modal-title').text(title);
+	//size
+	$(modalId+' .modal-dialog').css('width',ChatWin.width);
+	$(modalId+' .modal-dialog').css('height',ChatWin.height);
+	$(modalId).modal('toggle');
+};
 var info = function(msgStr){
 	msg('提示信息',msgStr);
 };
@@ -75,6 +87,7 @@ var error = function(errMsg){
 	msg('系统错误',errMsg);
 };
 var cfm = function(msgStr,suc,err){
+	closeMsg();
 	msg('确认信息',msgStr,suc,err);
 };
 var msg= function(title,msgStr,success,cancle){
@@ -115,4 +128,7 @@ var closeMsg=function(){
 };
 var closeInfo=function(){
 	$('#msgModal').modal('hide');
+};
+var closeChat=function(){
+	$('#chatModal').modal('hide');
 };

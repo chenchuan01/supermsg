@@ -188,6 +188,35 @@ function loadFristPage(id,roles){
 		$('#userListNav').click();
 	}
 }
+function chatWithFriend(url){
+	ajaxData(url,{},startChat);
+}
+function startChat(data){
+	closeMsg();
+	chat(data[ChatRole.he].name);
+}
+function openChatList(){
+	closeChat();
+	$('div[type="2"][uid="app_1"]').click();
+}
+function addFriend(url){
+	ajaxData(url, {}, function(){page(1);});
+}
+var friend_del_url='';
+function delFriend(url){
+	friend_del_url=url;
+	cfm('有个好友不容易，是不是再考虑考虑？',doDelFrined,closeInfo);
+}
+function doDelFrined(){
+	if(''!=friend_del_url){
+		ajaxData(friend_del_url, {}, function(){
+			page(1);
+			closeInfo();
+			$('div[type="2"][uid="app_2"]').click();
+			friend_del_url='';
+		});
+	}
+}
 /************Test DATA**************/
 var showTest=function(){
 	$(".dataTest").toggle();

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%-- <%@include file="modal.jspf"%> --%>
+<%@include file="modal.jspf"%>
 <%@include file="loading.jspf"%>
 <script type="text/javascript">
 	var sysRole = {
@@ -9,5 +9,14 @@
 		user : '${au_user}'
 	};
 	var logoutUri='login/logout.do';
+	var sysUserId = '${sysuser.id}';
+	var ChatWin = {
+			width:680,
+			height:920
+	};
+	var ChatRole = {
+			me:'me',
+			he:'he'
+	}
 </script>
 <%@include file="scripts.jspf"%>

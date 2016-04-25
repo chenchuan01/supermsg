@@ -33,9 +33,7 @@ var initOther=function(){
 	/**清空表单*/
 	cleanForm();
     /**bootstrap mual init*/
-   /* bootstrapInit();*/
-    
-    navsetActive();
+    bootstrapInit();
 };
 var selectUserCars=function(){
 	var option = '<option value="#car_id">#car_plate</option>';
@@ -137,12 +135,6 @@ var loadMyCarInfos=function(user_id){
 			}
 			$('#myCarInfos').html(optsHtml);
 		}
-	});
-};
-var navsetActive=function(){
-	$('.nav li').click(function(){
-		$('.nav li').removeClass('active');
-		$(this).addClass('active');
 	});
 };
 var cleanForm=function(){

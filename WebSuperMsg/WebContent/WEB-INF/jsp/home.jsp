@@ -4,11 +4,11 @@
 <html>
 	<head>
 		<%@include file="base/baseh.jspf" %>
+		
 	</head>
 	<body>
 		<div  id="themeSetting_wrap" style="display:none;">			
 				<div id="themeSetting_head" class="themeSetting_head">		
-					<div id="themeSetting_tabTheme" class="themeSetting_tab current" style="display: block;">系统主题</div>		
 				</div>					
 				<div id="themeSetting_body" class="themeSetting_body">	
 					<div id="themeSetting_area"  class="themeSetting_area" style="display: block;">						 
@@ -148,7 +148,7 @@
 					<a title="添加到收藏夹" href="javascript:;">添加到收藏夹</a>
 				</li>
 				<li cmd="shortcut">
-				<a title="保存桌面快捷方式" target="_blank" href="javascript:;">保存桌面快捷方式</a></li>
+				<a title="保存桌面快捷方式" target="_blank" href="javascript:;" >保存桌面快捷方式</a></li>
 				<li cmd="download">
 					<a title="下载客户端" href="javascript:;">下载客户端</a></li>
 					<li title="关于Q+ Web" cmd="about" id="taskbar_helpButton">

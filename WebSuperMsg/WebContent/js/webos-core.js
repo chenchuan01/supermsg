@@ -37,7 +37,7 @@ Util = {
 			var re = new RegExp("{" + k + "}", "g");
 			str = str.replace(re, model[k])
 		}
-		return str
+		return str;
 	}
 }
 
@@ -399,7 +399,7 @@ Sidebar=function(me){
 	var tool_list = "<div class='dock_tool_list' id='dockToolList' >";
 	var tool_item = "<div class='dock_tool_item'></div>";
 	var tool_a ="<a title='{title}' cmd='{cmd}'	class='dock_tool_icon dock_tool_{key}' href='javascript:;'></a>";
-	
+	var too_alert = "<a id='{id}' title='{title}' style='color:#fff;padding:13px;font-size:18px;'  href='javascript:;'><i class='glyphicon glyphicon-{key}'></i></a>";
 	//装载容器类
 	var SideBox = $.Class({
 		init :function(ops){
@@ -415,8 +415,6 @@ Sidebar=function(me){
 	});
 	return me ={
 		 init : function(ops){
-			
-			
 			me.create(ops.location);
 			me.movePanel();
 			me.addIcon(ops.Icon);
@@ -443,6 +441,7 @@ Sidebar=function(me){
 			Desktop.addPanel(me.rightPanel.box);
 			Desktop.addPanel(me.topPanel.box);
 			me.createStartTool();
+			me.createUserModify();
 			/*me.createPinyinTool();
 			me.createSoundTool();
 			me.createSettingTool();*/
@@ -487,7 +486,9 @@ Sidebar=function(me){
 				$(document).unbind('mousemove',drag).unbind('mouseup',drop);
 				flag=0;
 				dockEffectBox.hide();
-				me[location+'Panel'].addPanel(me);			
+				if(me[location+'Panel']!='undefined'){
+					me[location+'Panel'].addPanel(me);	
+				}
 				me.location=location;					
 				me.addStyle();				
 				Deskpanel.refreshIcon();//重新排布桌面图标
@@ -499,8 +500,8 @@ Sidebar=function(me){
 			  var dockItem = $(tool_item);
 			  var dockItem2 = $(tool_item);
 			  var dockItem3 = $(tool_item);
-			  dockItem.append(me.pinyin).append(me.sound);
-			  dockItem2.append(me.settingtool).append(me.theme);
+			  dockItem.append(me.userSet)
+			  dockItem2.append(me.theme);
 			  dockItem3.append(me.start);
 			  docklist.append(dockItem).append(dockItem2).append(dockItem3);
 			  me.box.append(docklist);		
@@ -539,6 +540,14 @@ Sidebar=function(me){
 		
 		 
 		 },
+		 createUserModify :function(){
+			 me.userSet =$(Util.formatmodel(too_alert,{
+				 	"id":"userSet",
+					"title":"密码修改",
+					"key":"user"
+				}));
+			 me.bindUserSet();
+		 },
 		 createPinyinTool :function(){//输入法
 			me.pinyin =$(Util.formatmodel(tool_a,{
 				"cmd":"Pinyin",
@@ -567,16 +576,24 @@ Sidebar=function(me){
 			}));
 		 },
 		 createThemeTool:function(){//主题设置				
-			 var theme = me.theme= $(Util.formatmodel(tool_a,{
+			  me.theme= $(Util.formatmodel(tool_a,{
 				"cmd":"Theme",
 				"title":"主题设置",
 				"key":"theme"
 			  }));
 			  me.bindTheme();
-		 },	 
+		 },
+		 bindUserSet:function(){
+			 me.userSet.click(function(){
+				 win('密码修改',basePath+'sys/pwdModify.do?id='+sysUserId,350,600);
+			 });
+			 
+		 },
 		 bindTheme:function(){
-			 var themsSetting = $("#themeSetting_wrap");			 
+			 var themsSetting = $("#themeSetting_wrap");
+			 
 			 me.theme.click(function(){
+				 	
 					Windows.openSys({
 						id :'themSetting',
 						title :'设置主题',
@@ -1450,7 +1467,7 @@ appIcon_t2 = appIcon_t0.extend({
 		this.sApp = DATA.sApp[fid];
 		this.tx = 2;
 		this.create();	
-		this.bindEvent();		
+		this.bindEvent(this.sApp);		
 	},
 	create : function(){
 		this._super(2);
@@ -1489,16 +1506,19 @@ appIcon_t2 = appIcon_t0.extend({
 		
 		this.box.append(appIcon).append(nameDiv).append(deleteDiv);
 	},
-	bindEvent:function(){//绑定事件
+	bindEvent:function(ico){//绑定事件
 		this.box.click(function(e){
 			 e.preventDefault();
 			 e.stopPropagation();
 			 var _this = $(this);
-			 var id = _this.attr("appid");
+//			 var id = _this.attr("appid");
 			 var title = $.trim(_this.text());
-			 var url ="http://www.baidu.com";
-			 var icon =_this.find("img").attr("src").split("/")[1];			
-			 Windows.openApp(id,title,url,icon,700,500);	
+			 var url =ico.url.replace('#id',sysUserId);
+//			 var icon =_this.find("img").attr("src").split("/")[1];
+			 
+			 win(title, url, ico.width, ico.height);
+			 
+			 	
 		});
 	}
 });

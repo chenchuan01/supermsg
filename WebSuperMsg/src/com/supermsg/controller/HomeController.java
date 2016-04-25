@@ -13,4 +13,16 @@ public class HomeController {
 	public String home(){
 		return "home";
 	}
+	@RequestMapping("/addFriend")
+	public String addFriend(Integer user_id){
+		return "friend/add";
+	}
+	@RequestMapping("/myFriends")
+	public String myFriends(Integer user_id){
+		return "friend/list";
+	}
+	@RequestMapping("/selectChat")
+	public String selectChat(Integer user_id){
+		return "chat/list";
+	}
 }
