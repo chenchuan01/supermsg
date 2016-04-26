@@ -78,7 +78,10 @@ var chat = function(title){
 	//size
 	$(modalId+' .modal-dialog').css('width',ChatWin.width);
 	$(modalId+' .modal-dialog').css('height',ChatWin.height);
+	
 	$(modalId).modal('toggle');
+	$('#msgAre').html('');
+	$('#chatTips').text('');
 };
 var info = function(msgStr){
 	msg('提示信息',msgStr);

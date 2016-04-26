@@ -186,7 +186,7 @@ function send() {
 		time : new Date().Format("yyyy-MM-dd HH:mm:ss")
 	};
 	ajaxData(basePath + 'chat/chating', chat, function() {
-		callbackShowMsg(ChatRole.me, chat);
+		callbackShowMsg('send', chat);
 		$('#talkBox').val('');
 		chatTips(ChatTips.success);
 	}, function(e) {
@@ -207,12 +207,12 @@ function callbackShowMsg(type, chat) {
 	var msg = '<p class="alert alert-#type msg"><b>#user: #time</b><br>#msg</p>';
 	var classStyle = 'info';
 	var user = '';
-	if (type == ChatRole.me) {
+	if (type == 'send') {
 		classStyle = 'info';
 		user = chat['fromName'];
-	} else if (type == ChatRole.he) {
+	} else if (type == 'receive') {
 		classStyle = 'success';
-		user = chat['toName'];
+		user = chat['fromName'];
 	}
 	msg = msg.replace('#type', classStyle).replace('#time', chat['time'])
 			.replace('#msg', chat['msg']).replace('#user', user);

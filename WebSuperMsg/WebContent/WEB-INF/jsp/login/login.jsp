@@ -34,7 +34,7 @@ function hideURLbar(){
 <link href='${ctx }/login/css/fonts.useso.com.pt.css' type='text/css'>
 <link href='${ctx }/login/css/front.useso.com.ex.css'  type='text/css'>
 <!--//webfonts-->
-<script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="${ctx }/js/common.js"></script>
 </head>
 <body >
