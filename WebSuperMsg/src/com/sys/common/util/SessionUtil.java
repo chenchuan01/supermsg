@@ -23,4 +23,13 @@ public class SessionUtil {
 		
 		return sysUser;
 	}
+
+	public static String webSocketUser(HttpSession session) {
+		User sysUser = sysUser(session);
+		return genWebSockUserIndex(sysUser);
+	}
+
+	private static String genWebSockUserIndex(User sysUser) {
+		return sysUser.getName()+"#"+sysUser.getId();
+	}
 }

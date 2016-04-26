@@ -74,7 +74,7 @@ var chat = function(title){
 	}
 	var modalId = "#chatModal";
 	//title
-	$(modalId+' .modal-title').text(title);
+	$(modalId+' .modal-title').text('@'+title);
 	//size
 	$(modalId+' .modal-dialog').css('width',ChatWin.width);
 	$(modalId+' .modal-dialog').css('height',ChatWin.height);

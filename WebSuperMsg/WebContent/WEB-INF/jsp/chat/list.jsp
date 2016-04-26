@@ -8,7 +8,7 @@ $(function(){
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<form id="search" action="friend/friendPage.do" method="post" class="form-inline">
+			<form id="search" action="friend/friendPage" method="post" class="form-inline">
 				  <div class="form-group">
 				    <label class="sr-only" for="frined_name">好友昵称</label>
 				    <input type="hidden" name="myFlag" value="1"/>
@@ -22,7 +22,7 @@ $(function(){
 					<td item="name"></td>
 					<td item="userName"></td>
 					<td item="oprea" itemFiled="id">
-						<a href="javascript:;" title="来聊两句"  onclick="chatWithFriend('chat/startChat.do?host=${sysuser.id}&friend_id=')" class="btn btn-info btn-sm">
+						<a href="javascript:;" title="来聊两句"  onclick="chatWithFriend('chat/startChat?host=${sysuser.id}&friend_id=')" class="btn btn-info btn-sm">
 						<i class="glyphicon glyphicon-comment"></i>
 						</a>
 					</td>

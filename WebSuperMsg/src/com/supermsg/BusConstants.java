@@ -5,6 +5,7 @@ package com.supermsg;
 public interface BusConstants {
 
 	String WEBSOCKET_USERNAME = "WEBSOCKET_USERNAME";
+	
 	String SESSION_USERNAME = "SESSION_USERNAME";
 	
 }

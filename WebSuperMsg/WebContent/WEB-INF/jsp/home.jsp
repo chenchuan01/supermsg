@@ -134,12 +134,12 @@
 		</div>
 		
 		<div id="zoomWallpaperGrid" class="zoomWallpaperGrid" style="position: absolute; z-index: -10; left: 0pt; top: 0pt; overflow: hidden; height: 381px; width: 1440px;">
-			<img id="zoomWallpaper" class="zoomWallpaper" style="position: absolute; top: 0pt; left: 0pt; height: 381px; width: 1440px;" src="images/bg/gravity.jpg">
+			<img id="zoomWallpaper" class="zoomWallpaper" style="position: absolute; top: 0pt; left: 0pt; height: 381px; width: 1440px;" src="images/bg/universe.jpg">
 		</div>
 		<div class="taskbar_start_menu_container" id="startMenuContainer" _olddisplay="block" style="display: none;">  
 			<div class="startMenuImg taskbar_start_menu_body" id="taskbar_start_menu_body">          
 			<div uin="0" class="taskbar_start_menu_selfinfo" id="startMenuSelfInfo">       
-				<div class="taskbar_start_menu_nick" id="startMenuSelfNick">请&nbsp;<a href="l" >登录</a></div>    
+				<div class="taskbar_start_menu_nick" id="startMenuSelfNick">请&nbsp;<a href="javascript:;" >登录</a></div>    
 				<a title="反馈" href="javascript:;" class="startMenuImg startMenuTopControl_support" cmd="support">&nbsp;</a>    
 				<a title="锁定" href="javascript:;" class="startMenuImg startMenuTopControl_lock" cmd="lock">&nbsp;</a>     
 			</div>              

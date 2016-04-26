@@ -15,7 +15,7 @@
 </div>
 <script type="text/javascript">
 $(function(){
-	window.location.href = "${pageContext.request.contextPath}/home.do";
+	window.location.href = "${pageContext.request.contextPath}/home";
 });
 </script>
 </body>

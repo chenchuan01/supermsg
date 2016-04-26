@@ -22,13 +22,26 @@
 			<mvc:mapping path="/**" />
 			<bean id="loginInterceptor" class="com.sys.common.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
+		<!-- WebSocket -->
+		<!-- <mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean id="websocketInterceptor" class="com.supermsg.websocket.WebSocketHandshakeInterceptor" />
+		</mvc:interceptor> -->
 	</mvc:interceptors>
-
+	
 	<!-- jsp页面解析器，当Controller返回XXX字符串时，先通过拦截器，然后该类就会在/WEB-INF/views/目录下，查找XXX.jsp文件 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<mvc:resources location="/images/" mapping="/images/**"/> 
+	<mvc:resources location="/css/" mapping="/css/**"/> 
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/fonts/" mapping="/fonts/**"/>
+	<mvc:resources location="/icon/" mapping="/icon/**"/>
+	<mvc:resources location="/login/" mapping="/login/**"/>
+	<mvc:resources location="/theme/" mapping="/theme/**"/>
+	
 	<bean id="springHolder" class="com.SpringContextHolder" />
 </beans>

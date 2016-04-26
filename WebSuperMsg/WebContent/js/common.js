@@ -176,18 +176,7 @@ function setContent(html){
 	page(1);
 	bootstrapInit();
 }
-function loadFristPage(id,roles){
-	if(sysRole.user==roles){
-		pageView('home/myInsurance.do?custom_id='+id);
-		$('#myInsNav').click();
-	}else if(sysRole.admin==roles){
-		pageView('home/insurList.do?admin_id='+id);
-		$('#insListNav').click();
-	}else if(sysRole.superAdmin==roles){
-		pageView('home/userList.do?superAdmin_id='+id);
-		$('#userListNav').click();
-	}
-}
+
 function chatWithFriend(url){
 	ajaxData(url,{},startChat);
 }

@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<form id="pwdForm" action="sys/userModify.do" method="post"
+			<form id="pwdForm" action="sys/userModify" method="post"
 				class="form-horizontal">
 				<div class="form-group">
 					<div class="input-group">

@@ -10,6 +10,7 @@ public class User extends BaseEntity{
 	private String password;
 	private Integer roles = null;
 	private String friends_id;
+	private Integer online;
 	
     public User() {
     }
@@ -59,6 +60,12 @@ public class User extends BaseEntity{
 	}
 	public void setFriends_id(String friends_id) {
 		this.friends_id = friends_id;
+	}
+	public Integer getOnline() {
+		return online;
+	}
+	public void setOnline(Integer online) {
+		this.online = online;
 	}
 	
 }

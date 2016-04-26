@@ -11,8 +11,8 @@
 	var logoutUri='login/logout.do';
 	var sysUserId = '${sysuser.id}';
 	var ChatWin = {
-			width:680,
-			height:920
+			width:600,
+			height:820
 	};
 	var ChatRole = {
 			me:'me',

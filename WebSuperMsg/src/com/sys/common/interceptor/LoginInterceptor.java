@@ -11,7 +11,7 @@ import com.sys.common.util.LogUtil;
 import com.sys.db.entity.User;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
-	private static final String[] IGNORE_URI = { "login", "regist","verify","code" };
+	private static final String[] IGNORE_URI = { "login", "regist","verify","code","js","css","fonts","icon","images","theme"};
 
 	@Override
 	public boolean preHandle(HttpServletRequest request,
@@ -31,7 +31,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 				flag = true;
 				
 			}else{
-				response.sendRedirect(request.getContextPath()+"/login.do");
+				response.sendRedirect(request.getContextPath()+"/login/");
 				flag = false;
 			}
 		}

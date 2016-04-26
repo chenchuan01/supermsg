@@ -13,7 +13,7 @@
 			icon:'chats.png',
 			name:'聊天好友',
 			asc :1,
-			url:'home/selectChat.do?user_id=#id',
+			url:'home/selectChat?user_id=#id',
 			width:500,
 			height:570
 				
@@ -23,7 +23,7 @@
 			icon:'friends.png',
 			name:'好友列表',
 			asc :1,
-			url:'home/myFriends.do?user_id=#id',
+			url:'home/myFriends?user_id=#id',
 			width:350,
 			height:670
 		},
@@ -32,7 +32,7 @@
 			icon:'plusup.png',
 			name:'添加好友',
 			asc :1,
-			url :'home/addFriend.do?user_id=#id',
+			url :'home/addFriend?user_id=#id',
 			width:350,
 			height:670
 		}

@@ -32,7 +32,7 @@ function hideURLbar(){
 <link href="${ctx }/login/css/style.css" rel='stylesheet' type='text/css' />
 <!--webfonts-->
 <link href='${ctx }/login/css/fonts.useso.com.pt.css' type='text/css'>
-<link href='${ctx }/login/css/fonts.useso.com.ex.css' rel='stylesheet' type='text/css'>
+<link href='${ctx }/login/css/front.useso.com.ex.css'  type='text/css'>
 <!--//webfonts-->
 <script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx }/js/common.js"></script>
@@ -68,7 +68,7 @@ function hideURLbar(){
 			</div>
       	</c:if>
 		<div id="login">
-			<form id="loginForm" action="login/verify.do" method="post">
+			<form id="loginForm" action="login/verify" method="post">
 				<input type="text" class="text user" value="" name="userName" placeholder="Username" valid="required"/>
 				<div class="key">
 					<input type="password" value="" name="password" placeholder="Password" valid="required"/>
@@ -79,7 +79,7 @@ function hideURLbar(){
 			</div>
 		</div>
 		<div id="regist" style="display: none;">
-			<form id="registForm" action="login/regist.do" method="post">
+			<form id="registForm" action="login/regist" method="post">
 				<input type="text" class="text hotname" value="" name="name" placeholder="昵称" valid="required"/>
 				<input type="text" class="text user" value="" name="userName" placeholder="Username" valid="required"/>
 				<div class="key">
