@@ -18,5 +18,12 @@
 			me:'me',
 			he:'he'
 	}
+	var ChatTips={
+		success:'发送成功！',
+		error:'发送失败！',
+		exp:'系统异常：#expMsg',
+		news:'新消息！！',
+		connect:'已连接！'
+	}
 </script>
 <%@include file="scripts.jspf"%>

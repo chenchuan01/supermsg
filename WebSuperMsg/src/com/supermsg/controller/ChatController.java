@@ -72,8 +72,9 @@ public class ChatController extends BaseController {
 	@RequestMapping("/chating")
 	public @ResponseBody
 	User chating(Chat chat,HttpSession session) {
+		String msg = JsonUtil.toJson(chat);
 		systemWebSocketHandler().sendMessageToUser(chat.getToName(),
-				new TextMessage(JsonUtil.toJson(chat)));
+				new TextMessage(msg));
 		return SessionUtil.sysUser(session);
 	}
 

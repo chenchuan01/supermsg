@@ -17,15 +17,20 @@
 				    	<div class="panel"style="height: 30%;">
 				    		 <div class="panel-body" style="height: 100%;">
 				    		 	<div class="col-md-12"  style="height: 80%;padding: 0;">
-				    		 		<textarea id="question" style="height: 100%;width: 100%;overflow-y:auto;word-break:break-all; resize:none;" 
+				    		 		<input id="fromName" type="hidden" name="fromName" value=""/>
+				    		 		<input id="toName" type="hidden" name="toName" value=""/>
+				    		 		<textarea id="talkBox" style="height: 100%;width: 100%;overflow-y:auto;word-break:break-all; resize:none;" 
 				    		 			placeholder="" class="form-control"></textarea>
 				    		 	</div>
 				    		 	<div class="col-md-12" style="padding: 3px;">
-					    		 	<div class="col-md-3"style="float: right;padding: 1px;">
+				    		 		<div class="col-md-3" style="float: left;padding: 6px;">
+				    		 			<p><i class="glyphicon glyphicon-info-sign"></i><b id="chatTips"></b></p>
+				    		 		</div>
+					    		 	<div class="col-md-3" style="float: right;padding: 1px;">
 					    		 		<button id="close" class="btn btn-warning btn-sm  btn-block" type="button" onclick="openChatList()" >关闭</button>
 					    		 	</div>
 					    		 	<div class="col-md-3" style="float: right;padding: 1px;">
-					    		 		<button id="send" class="btn btn-primary btn-sm btn-block"  type="button" >发送</button>
+					    		 		<button id="send" class="btn btn-primary btn-sm btn-block"  type="button" onclick="send()">发送</button>
 					    		 	</div>
 				    		 	</div>
 				    		 </div>

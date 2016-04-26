@@ -18,7 +18,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 		boolean flag = false;
 		String url = request.getRequestURL().toString();
-		LogUtil.infoReq(this.getClass(), url);
 		for (String s : IGNORE_URI) {
 			if (url.contains(s)) {
 				flag = true;
@@ -26,6 +25,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			}
 		}
 		if(!flag){
+			LogUtil.infoReq(this.getClass(), url);
 			User user = (User) request.getSession().getAttribute(SysConstants.SESSION_USER);
 			if (user != null){
 				flag = true;

@@ -52,7 +52,7 @@ var cleanForm=function(){
 	});
 };
 var bootstrapInit=function(){
-	 $('[data-toggle="popover"]').popover();
+	 /*$('[data-toggle="popover"]').popover();*/
 	 $('[data-toggle="tooltip"]').tooltip();
 	 $('#formModal').on('hidden.bs.modal', function (e) {
 		 $('#formModal'+' .modal-title').text("");
